@@ -1,15 +1,14 @@
 CONFIG += link_pkgconfig
 TARGET = qmlMozEmbedTestQt5
-SOURCES += mainqt5.cpp
+HEADERS += openglwindow.h browserwindow.h
+SOURCES += mainqt.cpp openglwindow.cpp browserwindow.cpp
 
 QT += dbus quick
 !isEmpty(BUILD_QT5QUICK1) {
   QT += declarative
 }
 
-!isEmpty(SF_TARGET) {
-  DEFINES += SILICA
-}
+DEFINES += SILICA
 
 QML_FILES = qml/*.qml
 RESOURCES += qmlMozEmbedTestQt5.qrc
